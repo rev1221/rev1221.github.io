@@ -31,6 +31,9 @@ ul{border-bottom-style:solid;
    padding-bottom:10px;
    position:sticky;
    }
+#link{text-decoration:none;}
+#paragraph{font-size:30px;
+           font-color:rgb(0,0,0);}
 
 #head{width:100%;
       height:100%;
