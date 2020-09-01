@@ -48,7 +48,7 @@ html{background-color:rgb(23,23,24);
      }
 body{background-color:rgb(23,23,24);
 }
-#X{border-style:solid;
+#x{border-style:solid;
    border-width:thick;
    border-radius:15px;
    background-color:rgb(255,255,255);
@@ -58,7 +58,7 @@ body{background-color:rgb(23,23,24);
    margin-top:100px;
    }
 
-#Y{border-style:solid;
+#ebayscraping{border-style:solid;
    border-width:thick;
    border-radius:15px;
    background-color:rgb(255,255,255);
@@ -68,13 +68,27 @@ body{background-color:rgb(23,23,24);
    margin-top:100px;
   }
 
-#X h2{text-align:center;}
-#X img{display:block;
+#x h2{text-align:center;}
+#x img{display:block;
        margin:auto;
        }
-#Y img{margin:auto;
+#ebayscraping img{margin:auto;
        display:block;
        }
-#Y h2{text-align:center;}
+#ebayscraping h2{text-align:center;}
+
+#Floyd-algorithm{border-style:solid;
+     border-width:thick;
+     border-radius:15px;
+     background-color:rgb(255,255,255);
+     width:100%;
+     height:100%;
+     margin:auto;
+     margin-top:100px;
+    }
+#Floyd-algorithm img{margin:auto;
+     display:block;
+     }
+#Floyd-algorithm h2{text-align:center;}
 
      
