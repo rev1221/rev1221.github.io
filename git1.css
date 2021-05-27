@@ -78,4 +78,18 @@ body{background-color:rgb(23,23,24);
      }
 #Floyd-algorithm h2{text-align:center;}
 
+#Heart-regression-analysis{border-style:solid;
+     border-width:thick;
+     border-radius:15px;
+     background-color:rgb(255,255,255);
+     width:100%;
+     height:100%;
+     margin:auto;
+     margin-top:100px;
+    }
+#Heart-regression-analysis img{margin:auto;
+     display:block;
+     }
+#Heart-regression-analysis h2{text-align:center;}
+
      
