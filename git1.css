@@ -92,4 +92,19 @@ body{background-color:rgb(23,23,24);
      }
 #Heart-regression-analysis h2{text-align:center;}
 
-     
+
+
+
+#Panel-regression-Grunfeld-data{border-style:solid;
+     border-width:thick;
+     border-radius:15px;
+     background-color:rgb(255,255,255);
+     width:100%;
+     height:100%;
+     margin:auto;
+     margin-top:100px;
+    }
+#Panel-regression-Grunfeld-data img{margin:auto;
+     display:block;
+     }
+#Panel-regression-Grunfeld-data h2{text-align:center;}
