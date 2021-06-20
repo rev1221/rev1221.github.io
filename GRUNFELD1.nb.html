@@ -276,14 +276,100 @@ RVFCS = data$C</code></pre>
 <p>Obtain the the summaries for the models</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXJtZml4ZWQpXG5zdW1tYXJ5KHllYXJmaXhlZClcbnN1bW1hcnkoYm90aGZpeGVkKVxuYGBgIn0= -->
-<pre class="r"><code>summary(firmfixed)
-summary(yearfixed)
-summary(bothfixed)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShmaXJtZml4ZWQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(firmfixed)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiT25ld2F5IChpbmRpdmlkdWFsKSBlZmZlY3QgV2l0aGluIE1vZGVsXG5cbkNhbGw6XG5wbG0oZm9ybXVsYSA9IFJWRiB+IElOVkVTVE1FTlQsIGRhdGEgPSBkYXRhLCBtb2RlbCA9IFwid2l0aGluXCIsIFxuICAgIGluZGV4ID0gYyhcIkZJUk1cIiwgXCJZRUFSXCIpKVxuXG5CYWxhbmNlZCBQYW5lbDogbiA9IDEwLCBUID0gMjAsIE4gPSAyMDBcblxuUmVzaWR1YWxzOlxuICAgICBNaW4uICAgMXN0IFF1LiAgICBNZWRpYW4gICAzcmQgUXUuICAgICAgTWF4LiBcbi05MjUuMjUzOCAgLTY4LjY5NjUgICAtNy44NDA5ICAgNzQuMjIzMSAxNDM4LjcwNTQgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0LXZhbHVlICBQcig+fHR8KSAgICBcbklOVkVTVE1FTlQgIDEuOTUyNDQgICAgMC4xODUwMyAgMTAuNTUyIDwgMi4yZS0xNiAqKipcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5Ub3RhbCBTdW0gb2YgU3F1YXJlczogICAgMjMwNzgwMDBcblJlc2lkdWFsIFN1bSBvZiBTcXVhcmVzOiAxNDUyMjAwMFxuUi1TcXVhcmVkOiAgICAgIDAuMzcwNzJcbkFkai4gUi1TcXVhcmVkOiAwLjMzNzQzXG5GLXN0YXRpc3RpYzogMTExLjM0NSBvbiAxIGFuZCAxODkgREYsIHAtdmFsdWU6IDwgMi4yMmUtMTZcbiJ9 -->
+<pre><code>Oneway (individual) effect Within Model
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKR3J1bmZlbGQgSW52ZXN0bWVudCBEYXRhLCAxMCBGaXJtcywgMjAgWWVhcnMgKDE5MzUtMTk1NCkgIApWYXJpYWJsZXMgaW4gdGhlIGZpbGUgYXJlCkZpcm0gPSBGaXJtIElELCAxLC4uLiwxMApZZWFyID0gMTkzNSwuLi4sMTk1NApJID0gSW52ZXN0bWVudApGID0gUmVhbCBWYWx1ZSBvZiB0aGUgRmlybQpDID0gUmVhbCBWYWx1ZSBvZiB0aGUgRmlybSdzIENhcGl0YWwgU3RvY2sKRGF0YSBhcmUgZnJvbSB0aGUgUGguRC4gZGlzc2VydGF0aW9uIG9mIFkuIEdydW5mZWxkIChVbml2LiBvZiBDaGljYWdvLCAxOTU4KSwgU2VlLCBlLmcuLCBaZWxsbmVyLCBBLiwgIkFuIEVmZmljaWVudCBNZXRob2Qgb2YgRXN0aW1hdGluZyBTZWVtaW5nbHkgVW5yZWxhdGVkIFJlZ3Jlc3Npb24gRXF1YXRpb25zIGFuZCBUZXN0cyBmb3IgQWdncmVnYXRpb24gQmlhcywiIEpvdXJuYWwgb2YgdGhlIEFtZXJpY2FuIFN0YXRpc3RpY2FsIEFzc29jaWF0aW9uLCA1NywgMTk2MiwgcHAuIDM0OC0zNjggZm9yIGFuYWx5c2VzIG9mIHRoZXNlIGRhdGEuCgpPYnRhaW4gdGhlIGxpYnJhcnkgZm9yIHBhbmVsIGxpbmVhciByZWdyZXNzaW9uCmBgYHtyfQpsaWJyYXJ5KHBsbSkKYGBgCkV4dHJhY3QgdGhlIGRhdGFzZXQgZnJvbSB0aGUgY3N2IGZpbGUKYGBge3J9CmRhdGEgPSByZWFkLmNzdignZ3J1bmZlbGQuY3N2JykKVmlldyhkYXRhKQpgYGAKRXh0cmFjdCB0aGUgdmFyaWFibGVzIGZyb20gdGhlIGRhdGFzZXQKYGBge3J9CkZJUk1JRCA9IGRhdGEkRklSTQpZRUFSID0gZGF0YSRZRUFSCklOVkVTVE1FTlQgPSBkYXRhJEkKUlZGID0gZGF0YSRGClJWRkNTID0gZGF0YSRDCmBgYApPYnRhaW4gZml4ZWQgZWZmZWN0IHJlZ3Jlc3Npb24gYmV0d2VlbiB0aGUgcmVhbCB2YWx1ZSBvZiB0aGUgZmlybSBhbmQgdGhlIGludmVzdG1lbnQKYGBge3J9CmZpcm1maXhlZCA9IHBsbShSVkZ+SU5WRVNUTUVOVCxkYXRhPWRhdGEsaW5kZXg9YygiRklSTSIsIllFQVIiKSwKICAgICAgICAgICAgICAgICBtb2RlbD0id2l0aGluIikKYGBgCk9idGFpbiBmaXhlZCB5ZWFyIHJlZ3Jlc3Npb24gYmV0d2VlbiB0aGUgcmVhbCB2YWx1ZSBvZiB0aGUgZmlybSBhbmQgdGhlIGludmVzdG1lbnQKYGBge3J9CnllYXJmaXhlZCA9IHBsbShSVkZ+SU5WRVNUTUVOVCxkYXRhPWRhdGEsaW5kZXg9YygiWUVBUiIsIkZJUk0iKSwKICAgICAgICAgICAgICAgIG1vZGVsPSJ3aXRoaW4iKQpgYGAKT2J0YWluIGZpeGVkIHllYXIgYW5kIGVmZmVjdCByZWdyZXNzaW9uIGJldHdlZW4gdGhlIHJlYWwgdmFsdWUgb2YgdGhlIGZpcm0gYW5kIHRoZSBpbnZlc3RtZW50CmBgYHtyfQpib3RoZml4ZWQgPSBwbG0oUlZGfklOVkVTVE1FTlQsZGF0YT1kYXRhLGluZGV4PWMoIkZJUk0iLCJZRUFSIiksCiAgICAgICAgICAgICAgICBtb2RlbD0id2l0aGluIixlZmZlY3Q9InR3b3dheXMiKQpgYGAKT2J0YWluIHRoZSB0aGUgc3VtbWFyaWVzIGZvciB0aGUgbW9kZWxzCmBgYHtyfQpzdW1tYXJ5KGZpcm1maXhlZCkKc3VtbWFyeSh5ZWFyZml4ZWQpCnN1bW1hcnkoYm90aGZpeGVkKQpgYGA=</div>
+Call:
+plm(formula = RVF ~ INVESTMENT, data = data, model = &quot;within&quot;, 
+    index = c(&quot;FIRM&quot;, &quot;YEAR&quot;))
+
+Balanced Panel: n = 10, T = 20, N = 200
+
+Residuals:
+     Min.   1st Qu.    Median   3rd Qu.      Max. 
+-925.2538  -68.6965   -7.8409   74.2231 1438.7054 
+
+Coefficients:
+           Estimate Std. Error t-value  Pr(&gt;|t|)    
+INVESTMENT  1.95244    0.18503  10.552 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    23078000
+Residual Sum of Squares: 14522000
+R-Squared:      0.37072
+Adj. R-Squared: 0.33743
+F-statistic: 111.345 on 1 and 189 DF, p-value: &lt; 2.22e-16</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeSh5ZWFyZml4ZWQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(yearfixed)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiT25ld2F5IChpbmRpdmlkdWFsKSBlZmZlY3QgV2l0aGluIE1vZGVsXG5cbkNhbGw6XG5wbG0oZm9ybXVsYSA9IFJWRiB+IElOVkVTVE1FTlQsIGRhdGEgPSBkYXRhLCBtb2RlbCA9IFwid2l0aGluXCIsIFxuICAgIGluZGV4ID0gYyhcIllFQVJcIiwgXCJGSVJNXCIpKVxuXG5CYWxhbmNlZCBQYW5lbDogbiA9IDIwLCBUID0gMTAsIE4gPSAyMDBcblxuUmVzaWR1YWxzOlxuICAgICBNaW4uICAgMXN0IFF1LiAgICBNZWRpYW4gICAzcmQgUXUuICAgICAgTWF4LiBcbi05NDIuMDI2MCAgLTU4LjM5MDIgICAtMi45NTQ3ICAgNjEuMDU5NSAxMjk0LjI3MTcgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0LXZhbHVlICBQcig+fHR8KSAgICBcbklOVkVTVE1FTlQgIDIuNDk0NTkgICAgMC4yMjYzNCAgMTEuMDIxIDwgMi4yZS0xNiAqKipcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5Ub3RhbCBTdW0gb2YgU3F1YXJlczogICAgMjEwNzUwMDBcblJlc2lkdWFsIFN1bSBvZiBTcXVhcmVzOiAxMjU1NTAwMFxuUi1TcXVhcmVkOiAgICAgIDAuNDA0MjdcbkFkai4gUi1TcXVhcmVkOiAwLjMzNzcxXG5GLXN0YXRpc3RpYzogMTIxLjQ3MyBvbiAxIGFuZCAxNzkgREYsIHAtdmFsdWU6IDwgMi4yMmUtMTZcbiJ9 -->
+<pre><code>Oneway (individual) effect Within Model
+
+Call:
+plm(formula = RVF ~ INVESTMENT, data = data, model = &quot;within&quot;, 
+    index = c(&quot;YEAR&quot;, &quot;FIRM&quot;))
+
+Balanced Panel: n = 20, T = 10, N = 200
+
+Residuals:
+     Min.   1st Qu.    Median   3rd Qu.      Max. 
+-942.0260  -58.3902   -2.9547   61.0595 1294.2717 
+
+Coefficients:
+           Estimate Std. Error t-value  Pr(&gt;|t|)    
+INVESTMENT  2.49459    0.22634  11.021 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    21075000
+Residual Sum of Squares: 12555000
+R-Squared:      0.40427
+Adj. R-Squared: 0.33771
+F-statistic: 121.473 on 1 and 179 DF, p-value: &lt; 2.22e-16</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShib3RoZml4ZWQpXG5gYGAifQ== -->
+<pre class="r"><code>summary(bothfixed)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVHdvd2F5cyBlZmZlY3RzIFdpdGhpbiBNb2RlbFxuXG5DYWxsOlxucGxtKGZvcm11bGEgPSBSVkYgfiBJTlZFU1RNRU5ULCBkYXRhID0gZGF0YSwgZWZmZWN0ID0gXCJ0d293YXlzXCIsIFxuICAgIG1vZGVsID0gXCJ3aXRoaW5cIiwgaW5kZXggPSBjKFwiRklSTVwiLCBcIllFQVJcIikpXG5cbkJhbGFuY2VkIFBhbmVsOiBuID0gMTAsIFQgPSAyMCwgTiA9IDIwMFxuXG5SZXNpZHVhbHM6XG4gICAgTWluLiAgMXN0IFF1LiAgIE1lZGlhbiAgM3JkIFF1LiAgICAgTWF4LiBcbi04MjIuODE4IC0xMDkuMjYwICAtMTUuNDk3ICAxMzAuNjQwIDEwODEuNDUyIFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdC12YWx1ZSAgUHIoPnx0fCkgICAgXG5JTlZFU1RNRU5UICAxLjcxNzg0ICAgIDAuMTk2OTUgIDguNzIyMiAyLjQxNGUtMTUgKioqXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuVG90YWwgU3VtIG9mIFNxdWFyZXM6ICAgIDE1NDIyMDAwXG5SZXNpZHVhbCBTdW0gb2YgU3F1YXJlczogMTA2NTQwMDBcblItU3F1YXJlZDogICAgICAwLjMwOTE2XG5BZGouIFItU3F1YXJlZDogMC4xOTEzMVxuRi1zdGF0aXN0aWM6IDc2LjA3NTkgb24gMSBhbmQgMTcwIERGLCBwLXZhbHVlOiAyLjQxNDNlLTE1XG4ifQ== -->
+<pre><code>Twoways effects Within Model
+
+Call:
+plm(formula = RVF ~ INVESTMENT, data = data, effect = &quot;twoways&quot;, 
+    model = &quot;within&quot;, index = c(&quot;FIRM&quot;, &quot;YEAR&quot;))
+
+Balanced Panel: n = 10, T = 20, N = 200
+
+Residuals:
+    Min.  1st Qu.   Median  3rd Qu.     Max. 
+-822.818 -109.260  -15.497  130.640 1081.452 
+
+Coefficients:
+           Estimate Std. Error t-value  Pr(&gt;|t|)    
+INVESTMENT  1.71784    0.19695  8.7222 2.414e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Total Sum of Squares:    15422000
+Residual Sum of Squares: 10654000
+R-Squared:      0.30916
+Adj. R-Squared: 0.19131
+F-statistic: 76.0759 on 1 and 170 DF, p-value: 2.4143e-15</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>All three regressions, all the parameters are statistically significant based on t-test and the F-test.</p>
+<p>For both: R-Squared: 0.30916 Adj. R-Squared: 0.19131</p>
+<p>For time-fixed: R-Squared: 0.40427 Adj. R-Squared: 0.33771</p>
+<p>For entity-fixed: R-Squared: 0.37072 Adj. R-Squared: 0.33743</p>
+<p>So based on this the R-squared and Adjusted R-squared the time fixed regression is the model that explain the most of the variation of the data.</p>
+<!-- rnb-text-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKR3J1bmZlbGQgSW52ZXN0bWVudCBEYXRhLCAxMCBGaXJtcywgMjAgWWVhcnMgKDE5MzUtMTk1NCkgIApWYXJpYWJsZXMgaW4gdGhlIGZpbGUgYXJlCkZpcm0gPSBGaXJtIElELCAxLC4uLiwxMApZZWFyID0gMTkzNSwuLi4sMTk1NApJID0gSW52ZXN0bWVudApGID0gUmVhbCBWYWx1ZSBvZiB0aGUgRmlybQpDID0gUmVhbCBWYWx1ZSBvZiB0aGUgRmlybSdzIENhcGl0YWwgU3RvY2sKRGF0YSBhcmUgZnJvbSB0aGUgUGguRC4gZGlzc2VydGF0aW9uIG9mIFkuIEdydW5mZWxkIChVbml2LiBvZiBDaGljYWdvLCAxOTU4KSwgU2VlLCBlLmcuLCBaZWxsbmVyLCBBLiwgIkFuIEVmZmljaWVudCBNZXRob2Qgb2YgRXN0aW1hdGluZyBTZWVtaW5nbHkgVW5yZWxhdGVkIFJlZ3Jlc3Npb24gRXF1YXRpb25zIGFuZCBUZXN0cyBmb3IgQWdncmVnYXRpb24gQmlhcywiIEpvdXJuYWwgb2YgdGhlIEFtZXJpY2FuIFN0YXRpc3RpY2FsIEFzc29jaWF0aW9uLCA1NywgMTk2MiwgcHAuIDM0OC0zNjggZm9yIGFuYWx5c2VzIG9mIHRoZXNlIGRhdGEuCgpPYnRhaW4gdGhlIGxpYnJhcnkgZm9yIHBhbmVsIGxpbmVhciByZWdyZXNzaW9uCmBgYHtyfQpsaWJyYXJ5KHBsbSkKYGBgCkV4dHJhY3QgdGhlIGRhdGFzZXQgZnJvbSB0aGUgY3N2IGZpbGUKYGBge3J9CmRhdGEgPSByZWFkLmNzdignZ3J1bmZlbGQuY3N2JykKVmlldyhkYXRhKQpgYGAKRXh0cmFjdCB0aGUgdmFyaWFibGVzIGZyb20gdGhlIGRhdGFzZXQKYGBge3J9CkZJUk1JRCA9IGRhdGEkRklSTQpZRUFSID0gZGF0YSRZRUFSCklOVkVTVE1FTlQgPSBkYXRhJEkKUlZGID0gZGF0YSRGClJWRkNTID0gZGF0YSRDCmBgYApPYnRhaW4gZml4ZWQgZWZmZWN0IHJlZ3Jlc3Npb24gYmV0d2VlbiB0aGUgcmVhbCB2YWx1ZSBvZiB0aGUgZmlybSBhbmQgdGhlIGludmVzdG1lbnQKYGBge3J9CmZpcm1maXhlZCA9IHBsbShSVkZ+SU5WRVNUTUVOVCxkYXRhPWRhdGEsaW5kZXg9YygiRklSTSIsIllFQVIiKSwKICAgICAgICAgICAgICAgICBtb2RlbD0id2l0aGluIikKYGBgCk9idGFpbiBmaXhlZCB5ZWFyIHJlZ3Jlc3Npb24gYmV0d2VlbiB0aGUgcmVhbCB2YWx1ZSBvZiB0aGUgZmlybSBhbmQgdGhlIGludmVzdG1lbnQKYGBge3J9CnllYXJmaXhlZCA9IHBsbShSVkZ+SU5WRVNUTUVOVCxkYXRhPWRhdGEsaW5kZXg9YygiWUVBUiIsIkZJUk0iKSwKICAgICAgICAgICAgICAgIG1vZGVsPSJ3aXRoaW4iKQpgYGAKT2J0YWluIGZpeGVkIHllYXIgYW5kIGVmZmVjdCByZWdyZXNzaW9uIGJldHdlZW4gdGhlIHJlYWwgdmFsdWUgb2YgdGhlIGZpcm0gYW5kIHRoZSBpbnZlc3RtZW50CmBgYHtyfQpib3RoZml4ZWQgPSBwbG0oUlZGfklOVkVTVE1FTlQsZGF0YT1kYXRhLGluZGV4PWMoIkZJUk0iLCJZRUFSIiksCiAgICAgICAgICAgICAgICBtb2RlbD0id2l0aGluIixlZmZlY3Q9InR3b3dheXMiKQpgYGAKT2J0YWluIHRoZSB0aGUgc3VtbWFyaWVzIGZvciB0aGUgbW9kZWxzCmBgYHtyfQpzdW1tYXJ5KGZpcm1maXhlZCkKc3VtbWFyeSh5ZWFyZml4ZWQpCnN1bW1hcnkoYm90aGZpeGVkKQpgYGAKQWxsIHRocmVlIHJlZ3Jlc3Npb25zLCBhbGwgdGhlIHBhcmFtZXRlcnMgYXJlIHN0YXRpc3RpY2FsbHkgc2lnbmlmaWNhbnQgYmFzZWQgb24gdC10ZXN0IGFuZCB0aGUgRi10ZXN0LgoKRm9yIGJvdGg6ClItU3F1YXJlZDogICAgICAwLjMwOTE2CkFkai4gUi1TcXVhcmVkOiAwLjE5MTMxCgpGb3IgdGltZS1maXhlZDoKUi1TcXVhcmVkOiAgICAgIDAuNDA0MjcKQWRqLiBSLVNxdWFyZWQ6IDAuMzM3NzEKCkZvciBlbnRpdHktZml4ZWQ6ClItU3F1YXJlZDogICAgICAwLjM3MDcyCkFkai4gUi1TcXVhcmVkOiAwLjMzNzQzCgpTbyBiYXNlZCBvbiB0aGlzIHRoZSBSLXNxdWFyZWQgYW5kIEFkanVzdGVkIFItc3F1YXJlZCB0aGUgdGltZSBmaXhlZCByZWdyZXNzaW9uIGlzIHRoZSBtb2RlbCB0aGF0IGV4cGxhaW4gdGhlIG1vc3Qgb2YgdGhlIHZhcmlhdGlvbiBvZiB0aGUgZGF0YS4=</div>
 
 
 
